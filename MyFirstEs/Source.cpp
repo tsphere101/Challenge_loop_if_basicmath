@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <math.h>
 
-
 int main()
 {
-	double x, y,i, Average, SD, amount,sigmaOfDif =0;
-	scanf_s("%lf %lf",&x,&y);
+	int x, y,amount;
+	double i, Average, SD, sigmaOfDif =0;
+	scanf_s("%d %d",&x,&y);
 	Average = (x + y) / 2.0;
 	if (x < y)
 	{
@@ -13,7 +13,7 @@ int main()
 		while (x <= y) 
 		{
 			sigmaOfDif += pow((x-Average),2);
-			printf("%.0f ",x);
+			printf("%d ",x);
 			x++;
 		}
 
@@ -25,7 +25,7 @@ int main()
 		while (x >= y)
 		{
 			sigmaOfDif += pow((x - Average), 2);
-			printf("%.0f ", x);
+			printf("%d ", x);
 			x--;
 		}
 	}
@@ -33,10 +33,10 @@ int main()
 	{
 		amount = 2;
 		sigmaOfDif += (x - Average) * (x - Average);
-		printf("%.0f %0.f",x,y);
+		printf("%d %d",x,y);
 	}
 	printf("\n");
-	SD = sqrt((sigmaOfDif / (amount-1)));
+	SD = sqrt((sigmaOfDif / (amount-1.0)));
 	printf("Average = %.2f\n", Average);
 	printf("SD = %.2f", SD);
 
